@@ -29,7 +29,7 @@ app.get("/api/timestamp/:date_stamp?", function(req, res){
   let date;
   if (!req.params.date_stamp) {
     date = new Date();
-  } else if (isNaN(date)) {
+  } else if (isNaN(req.params.date_stamp)) {
     date = new Date(req.params.date_stamp);
   } else {
     date = new Date(+req.params.date_stamp);
